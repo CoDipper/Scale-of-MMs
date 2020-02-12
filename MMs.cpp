@@ -12,13 +12,18 @@ void OutPutRightLeg(int Right[100][100], int n);        //Метод за съз
 void OutPutShoulder(int Shoulder[100][100], int n);     //Метод за създаване на раменете на буквата
 void OutPutMiddle(int Middle[100][100], int n);         //Метод за създаване на свода на буквата(средата)
 
+
+
 int main(){
     int LeftLeg[100][100];
     int RightLeg[100][100];
     int Shoulder[100][100];
     int Middle[100][100];
     int n;
-    cout<<"Enter the scale of MMs:"; cin>>n;
+    do{
+        cout<<"Enter an odd scale of Ms which is in the interval [3; 99):";
+        cin>>n;
+    }while(n%2!=1||(n<2||n>=99));
     OutPutLeftLeg(LeftLeg, n);
     OutPutRightLeg(RightLeg, n);
     OutPutShoulder(Shoulder, n);
@@ -41,9 +46,8 @@ void ArrZero(int Zero[100][100], int n){
     }
 }
 void Print(int Left[100][100],int Right[100][100],int Shoulder[100][100],int Middle[100][100], int n){
-    cout<<endl;
-    cout<<"MMs of scale "<<n<<" is:";
-    cout<<endl<<"-------------------"<<endl<<endl;
+    cout<<endl<<"-------------------"<<endl;
+    cout<<"Ms of scale "<<n<<" is:"<<endl<<endl;
     for(int i=0; i<n+1; i++){
         for(int d=2; d>0; d--){
             for(int j=0; j<n; j++){
@@ -122,7 +126,7 @@ void OutPutMiddle(int Middle[100][100], int n){
     ArrOne(Middle, n);
     for(int i=0; i<n+1; i++){
         for(int j=0; j<n; j++){
-            if((i<n-2)&&(i+j)<n){
+            if((i<n-j)&&(i+j)<n){
                 *(*(Middle+i)+j)=0;
             }
             if(j<i){
@@ -131,3 +135,4 @@ void OutPutMiddle(int Middle[100][100], int n){
         }
     }
 }
+
