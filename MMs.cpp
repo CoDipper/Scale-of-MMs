@@ -14,8 +14,6 @@ void OutPutRightLeg(int Right[100][100], int n);        //Метод за съз
 void OutPutShoulder(int Shoulder[100][100], int n);     //Метод за създаване на раменете на буквата
 void OutPutMiddle(int Middle[100][100], int n);         //Метод за създаване на свода на буквата(средата)
 
-
-
 int main(){
     int LeftLeg[100][100];
     int RightLeg[100][100];
