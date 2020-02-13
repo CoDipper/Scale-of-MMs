@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 //Прототипи на методи
 void ArrOne(int One[100][100], int n);              //Зануляване на масива
 void ArrZero(int Zero[100][100], int n);            //Масив от единици
@@ -10,7 +11,6 @@ void PrintDashOrDot(int a);
 
 void OutPutLeftLeg(int Left[100][100], int n);          //Метод за създаване на лявото краче на буквата
 void OutPutRightLeg(int Right[100][100], int n);        //Метод за създаване на дясното краче на буквата
-
 void OutPutShoulder(int Shoulder[100][100], int n);     //Метод за създаване на раменете на буквата
 void OutPutMiddle(int Middle[100][100], int n);         //Метод за създаване на свода на буквата(средата)
 
@@ -122,4 +122,3 @@ void OutPutMiddle(int Middle[100][100], int n){
         }
     }
 }
-
