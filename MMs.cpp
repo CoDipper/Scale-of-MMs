@@ -1,10 +1,12 @@
 #include<iostream>
 using namespace std;
+//Прототипи на методи
 void ArrOne(int One[100][100], int n);              //Зануляване на масива
 void ArrZero(int Zero[100][100], int n);            //Масив от единици
 
 //Разпечатване на краен резултат в конзолата
 void Print(int Left[100][100],int Right[100][100],int Shoulder[100][100],int Middle[100][100], int n);
+void PrintDashOrDot(int a);
 
 void OutPutLeftLeg(int Left[100][100], int n);          //Метод за създаване на лявото краче на буквата
 void OutPutRightLeg(int Right[100][100], int n);        //Метод за създаване на дясното краче на буквата
@@ -51,42 +53,29 @@ void Print(int Left[100][100],int Right[100][100],int Shoulder[100][100],int Mid
     for(int i=0; i<n+1; i++){
         for(int d=2; d>0; d--){
             for(int j=0; j<n; j++){
-                if(*(*(Left+i)+j)==1){
-                    cout<<"*";
-                }else{
-                    cout<<"-";
-                }
+                PrintDashOrDot(*(*(Left+i)+j));
             }
             for(int j=0; j<n; j++){
-                if(*(*(Shoulder+i)+j)==1){
-                    cout<<"*";
-                }else{
-                    cout<<"-";
-                }
+                PrintDashOrDot(*(*(Shoulder+i)+j));
             }
             for(int j=0; j<n; j++){
-                if(*(*(Middle+i)+j)==1){
-                    cout<<"*";
-                }else{
-                    cout<<"-";
-                }
+                PrintDashOrDot(*(*(Middle+i)+j));
             }
             for(int j=0; j<n; j++){
-                if(*(*(Shoulder+i)+j)==1){
-                    cout<<"*";
-                }else{
-                    cout<<"-";
-                }
+                PrintDashOrDot(*(*(Shoulder+i)+j));
             }
             for(int j=0; j<n; j++){
-                if(*(*(Right+i)+j)==1){
-                    cout<<"*";
-                }else{
-                    cout<<"-";
-                }
+                PrintDashOrDot(*(*(Right+i)+j));
             }
         }
         cout<<endl;
+    }
+}
+void PrintDashOrDot(int a){
+    if(a==1){
+        cout<<"*";
+    }else{
+        cout<<"-";
     }
 }
 void OutPutLeftLeg(int Left[100][100], int n){
